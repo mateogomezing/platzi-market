@@ -1,42 +1,41 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="productos")
 public class Producto {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_producto")
-    private Integer idproducto;
+    @Column(name = "id_producto")
+    private Integer idProducto;
 
     private String nombre;
 
-    @Column(name="id_categoria")
-    private Integer idcategoria;
+    @Column(name = "id_categoria")
+    private Integer idCategoria;
 
-    @Column(name="codigo_barras")
+    @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @Column(name="precio_venta")
-    private Double precioventa;
+    @Column(name = "precio_venta")
+    private Double precioVenta;
 
-    @Column(name="cantidad_stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name="id_categoria",insertable = false,updatable = false)
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
-    public Integer getIdproducto() {
-        return idproducto;
+    public Integer getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdproducto(Integer idproducto) {
-        this.idproducto = idproducto;
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getNombre() {
@@ -47,20 +46,12 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public Integer getIdcategoria() {
-        return idcategoria;
+    public Integer getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdcategoria(Integer idcategoria) {
-        this.idcategoria = idcategoria;
-    }
-
-    public Integer getCantidadStock() {
-        return cantidadStock;
-    }
-
-    public void setCantidadStock(Integer cantidadStock) {
-        this.cantidadStock = cantidadStock;
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getCodigoBarras() {
@@ -71,12 +62,20 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public Double getPrecioventa() {
-        return precioventa;
+    public Double getPrecioVenta() {
+        return precioVenta;
     }
 
-    public void setPrecioventa(Double precioventa) {
-        this.precioventa = precioventa;
+    public void setPrecioVenta(Double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+
+    public Integer getCantidadStock() {
+        return cantidadStock;
+    }
+
+    public void setCantidadStock(Integer cantidadStock) {
+        this.cantidadStock = cantidadStock;
     }
 
     public Boolean getEstado() {

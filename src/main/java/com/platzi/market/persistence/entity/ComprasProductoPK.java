@@ -1,33 +1,31 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 import java.io.Serializable;
 
 @Embeddable
 public class ComprasProductoPK implements Serializable {
+    @Column(name = "id_compra")
+    private Integer idCompra;
 
-    @Column(name="id_compra")
-    private Integer idcompra;
+    @Column(name = "id_producto")
+    private Integer idProducto;
 
-    @Column(name="id_producto")
-    private Integer idproducto;
-
-
-    public Integer getIdcompra() {
-        return idcompra;
+    public Integer getIdCompra() {
+        return idCompra;
     }
 
-    public void setIdcompra(Integer idcompra) {
-        this.idcompra = idcompra;
+    public void setIdCompra(Integer idCompra) {
+        this.idCompra = idCompra;
     }
 
-    public Integer getIdproducto() {
-        return idproducto;
+    public Integer getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdproducto(Integer idproducto) {
-        this.idproducto = idproducto;
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
     }
 }

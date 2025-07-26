@@ -1,8 +1,7 @@
 package com.platzi.market.persistence.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -12,41 +11,41 @@ public class Compra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_compra")
-    private Integer idcompra;
+    @Column(name = "id_compra")
+    private Integer idCompra;
 
-    @Column(name="id_cliente")
-    private String idcliente;
+    @Column(name = "id_cliente")
+    private String idCliente;
 
     private LocalDateTime fecha;
 
-    @Column(name="medio_pago")
-    private String mediopago;
+    @Column(name = "medio_pago")
+    private String medioPago;
 
     private String comentario;
     private String estado;
 
     @ManyToOne
-    @JoinColumn(name="id_cliente",insertable = false,updatable = false)
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "producto")
     private List<ComprasProducto> productos;
 
-    public Integer getIdcompra() {
-        return idcompra;
+    public Integer getIdCompra() {
+        return idCompra;
     }
 
-    public void setIdcompra(Integer idcompra) {
-        this.idcompra = idcompra;
+    public void setIdCompra(Integer idCompra) {
+        this.idCompra = idCompra;
     }
 
-    public String getIdcliente() {
-        return idcliente;
+    public String getIdCliente() {
+        return idCliente;
     }
 
-    public void setIdcliente(String idcliente) {
-        this.idcliente = idcliente;
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
     }
 
     public LocalDateTime getFecha() {
@@ -57,12 +56,12 @@ public class Compra {
         this.fecha = fecha;
     }
 
-    public String getMediopago() {
-        return mediopago;
+    public String getMedioPago() {
+        return medioPago;
     }
 
-    public void setMediopago(String mediopago) {
-        this.mediopago = mediopago;
+    public void setMedioPago(String medioPago) {
+        this.medioPago = medioPago;
     }
 
     public String getComentario() {
@@ -80,4 +79,21 @@ public class Compra {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<ComprasProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<ComprasProducto> productos) {
+        this.productos = productos;
+    }
+
 }
