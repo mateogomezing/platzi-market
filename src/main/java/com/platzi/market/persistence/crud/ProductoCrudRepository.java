@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
-
+// encargado de interactuar con base de datos
 public interface ProductoCrudRepository extends CrudRepository<Producto,Integer> {
 
 
